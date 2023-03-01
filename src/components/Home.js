@@ -7,13 +7,18 @@ import Map from "../components/Map/Map";
 export default function Home() {
 
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: 'AIzaSyBze2qF5Q9vy3xfq1peqxers1Lgc4i0AZM',
+    googleMapsApiKey: '',
     libraries: ["places"],
   });
 
-  
+
   //this checks if the useLoadScript worked...if it did returns map component
-  if (!isLoaded) return <div>Loading...</div>;
-  return <Map />;
+  if (!isLoaded) {
+    return <div>Loading...</div>;
+  }
+  else {
+    return <Map />;
+  }
+
   
 }
